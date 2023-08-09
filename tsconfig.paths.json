@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@shared/icon": ["src/app/modules/shared/icon/index.ts"]
+    }
   }
 }

@@ -5,9 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
+        "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
@@ -42,7 +40,10 @@
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {
-            "constructors": "no-public"
+            "accessibility": "explicit",
+            "overrides": {
+              "constructors": "no-public"
+            }
           }
         ]
       }
