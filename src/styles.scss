@@ -1,1 +1,13 @@
 @import 'angular-material';
+@import 'normalize';
+
+@import 'mixins';
+@import 'shorthand-props';
+
+@import 'container';
+
+.divider {
+  background-color: lightgray;
+  width: 100%;
+  height: 1px;
+}
