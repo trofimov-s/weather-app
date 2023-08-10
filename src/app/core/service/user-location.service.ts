@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, of, tap } from 'rxjs';
 
 import { RootApi } from './root-api';
 import { UserLocationData, UserLocationApiResponse } from '@core/model/api';
 
 @Injectable({ providedIn: 'root' })
 export class UserLocationService extends RootApi {
-  private _userLocation$ = new Subject<UserLocationData>();
+  private _userLocation$ = new BehaviorSubject<UserLocationData>(null);
 
   public get userLocation$(): Observable<UserLocationData> {
     return this._userLocation$.asObservable();
@@ -30,6 +30,10 @@ export class UserLocationService extends RootApi {
         }),
       ),
       tap((data: UserLocationData) => this._userLocation$.next(data)),
+      catchError(() => {
+        this._userLocation$.next(null);
+        return of(null);
+      }),
     );
   }
 }

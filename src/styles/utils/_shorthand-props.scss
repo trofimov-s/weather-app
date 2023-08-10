@@ -1,0 +1,21 @@
+// Flex
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+// Width
+.w-full {
+  width: 100%;
+}

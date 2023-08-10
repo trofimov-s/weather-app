@@ -2,10 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@shared/icon": ["src/app/modules/shared/icon/index.ts"],
-      "@core/model/api": ["src/app/modules/core/models/api/index.ts"],
-      "@core/constant/api": ["src/app/modules/core/constant/api/index.ts"],
-      "@core/service": ["src/app/modules/core/service/index.ts"]
+      "@shared/icon": ["src/app/shared/icon/index.ts"],
+      "@core": ["src/app/core/index.ts"],
+      "@core/model/api": ["src/app/core/models/api/index.ts"],
+      "@core/constant/api": ["src/app/core/constant/api/index.ts"],
+      "@core/service": ["src/app/core/service/index.ts"],
+      "@core/components": ["src/app/core/components/index.ts"],
+      "@modules/header": ["src/app/modules/header/index.ts"],
+      "@modules/main": ["src/app/modules/main/index.ts"]
     }
   }
 }
