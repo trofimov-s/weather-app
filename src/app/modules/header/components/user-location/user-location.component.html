@@ -1,9 +1,12 @@
 <ng-container *ngIf="userLocation$ | async as location">
   <div>
-    <span>Your location:</span>
-    <div>
+    <div class="flex items-center">
+      <mat-icon>person_pin_circle</mat-icon>
+      <span>Location:</span>
+    </div>
+    <div class="flex items-center x-gap-8">
       <span>{{ location.city }}, {{ location.country }}</span>
-      <img [src]="location.flag_svg" [alt]="'Flag of ' + location.country" />
+      <img class="h-24" [src]="location.flag_svg" [alt]="'Flag of ' + location.country" />
     </div>
   </div>
 </ng-container>

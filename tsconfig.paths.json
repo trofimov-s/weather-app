@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@shared/icon": ["src/app/shared/icon/index.ts"],
+      "@shared/input": ["src/app/shared/input/index.ts"],
       "@core": ["src/app/core/index.ts"],
       "@core/model/api": ["src/app/core/models/api/index.ts"],
       "@core/constant/api": ["src/app/core/constant/api/index.ts"],

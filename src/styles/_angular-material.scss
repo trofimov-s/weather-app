@@ -26,6 +26,7 @@ $weather-app-theme: mat.define-light-theme(
       accent: $weather-app-accent,
       warn: $weather-app-warn,
     ),
+    destiny: 0,
   )
 );
 

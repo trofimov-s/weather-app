@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <input
+    matInput
+    type="text"
+    [ngModel]="value"
+    (ngModelChange)="valueChange.emit($event)"
+    (keydown.enter)="onClick()"
+  />
+  <button *ngIf="icon" matSuffix mat-icon-button (click)="onClick()">
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</mat-form-field>

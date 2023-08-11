@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { MainComponent } from './components';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
+
+import { MainComponent, SearchComponent } from './components';
+import { InputModule } from '@shared/input';
 
 const routes: Routes = [
   {
@@ -12,8 +14,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
-  declarations: [MainComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), InputModule, MatIconModule],
+  declarations: [MainComponent, SearchComponent],
   exports: [MainComponent],
 })
 export class MainModule {}

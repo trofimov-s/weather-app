@@ -14,12 +14,12 @@ function init(locationService: UserLocationService): () => Promise<UserLocationD
   imports: [CommonModule, HeaderModule],
   exports: [HeaderModule],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      useFactory: init,
-      deps: [UserLocationService],
-    },
+    // {
+    //   provide: APP_INITIALIZER,
+    //   multi: true,
+    //   useFactory: init,
+    //   deps: [UserLocationService],
+    // },
   ],
 })
 export class CoreModule {}
