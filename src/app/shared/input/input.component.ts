@@ -19,8 +19,8 @@ export class InputComponent {
   @Input()
   public icon: string;
 
-  @Input()
-  public onClick: () => void;
+  @Output()
+  public submitEv = new EventEmitter<void>();
 
   @Input({ required: true })
   public value = '';

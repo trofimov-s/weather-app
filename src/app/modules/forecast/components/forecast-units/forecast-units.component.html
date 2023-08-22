@@ -1,0 +1,8 @@
+<span
+  *ngFor="let unit of unitsMap"
+  class="unit"
+  [class.active]="unit[0] === currentUnit"
+  (click)="selectUnit(unit[0])"
+>
+  {{ unit[1] }}
+</span>

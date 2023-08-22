@@ -5,9 +5,9 @@
     type="text"
     [ngModel]="value"
     (ngModelChange)="valueChange.emit($event)"
-    (keydown.enter)="onClick()"
+    (keydown.enter)="submitEv.emit()"
   />
-  <button *ngIf="icon" matSuffix mat-icon-button (click)="onClick()">
+  <button *ngIf="icon" matSuffix mat-icon-button (click)="submitEv.emit()">
     <mat-icon>{{ icon }}</mat-icon>
   </button>
 </mat-form-field>

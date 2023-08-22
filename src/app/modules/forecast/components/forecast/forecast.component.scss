@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .wrapper {
+    margin: 40px 0;
+  }
+}

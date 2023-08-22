@@ -37,6 +37,7 @@
         "semi": "error",
         "@typescript-eslint/no-empty-function": "warn",
         "@typescript-eslint/explicit-function-return-type": "error",
+        "@angular-eslint/no-input-rename": "off",
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {
@@ -52,9 +53,13 @@
       "files": ["*.html"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
-        "plugin:@angular-eslint/template/accessibility"
+        "plugin:@angular-eslint/template/accessibility",
+        "plugin:prettier/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/template/interactive-supports-focus": "off",
+        "@angular-eslint/template/click-events-have-key-events": "off"
+      }
     }
   ]
 }

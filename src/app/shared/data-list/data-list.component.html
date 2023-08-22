@@ -1,0 +1,12 @@
+<ul class="flex flex-col">
+  <li
+    *ngFor="let option of options; trackBy: trackBy"
+    class="flex justify-between data-list-option"
+  >
+    <span>{{ option.title }}</span>
+    <ng-container [ngSwitch]="option.type">
+      <span *ngSwitchCase="'units'" class="text-dark-gray">{{ option.value }}° {{ unit }}</span>
+      <span *ngSwitchDefault class="text-dark-gray">{{ option.value }}</span>
+    </ng-container>
+  </li>
+</ul>

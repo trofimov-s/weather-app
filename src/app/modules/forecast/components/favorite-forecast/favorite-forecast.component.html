@@ -1,0 +1,43 @@
+<app-expansion-panel *ngVar="favoriteCitiesForecast$ | async as forecasts">
+  <h3 title>Favorite cities</h3>
+  <ng-container *ngIf="forecasts?.length; else empty" content>
+    <ul class="favorite-list">
+      <li class="favorite-list__item" *ngFor="let forecast of forecasts; trackBy: trackBy">
+        <h3 class="flex-1">{{ forecast.location }}</h3>
+        <div class="details">
+          <img
+            class="icon"
+            [src]="'https://openweathermap.org/img/wn/' + forecast.icon + '.png'"
+            [alt]="forecast.main"
+          />
+          <h3 class="temp">
+            {{ forecast.temp }}°<span class="temp-units">{{ unit | unit }}</span>
+          </h3>
+          <div class="min-max">
+            <div class="flex align-center">
+              <mat-icon class="material-symbols-outlined red">keyboard_double_arrow_up</mat-icon>
+              <span class="degrees text-dark-gray"
+                >{{ forecast.temp_max }} °<span class="temp-units">{{ unit | unit }}</span></span
+              >
+            </div>
+            <div class="flex align-center">
+              <mat-icon class="material-symbols-outlined blue">keyboard_double_arrow_down</mat-icon>
+              <span class="degrees text-dark-gray"
+                >{{ forecast.temp_min }} °<span class="temp-units">{{ unit | unit }}</span></span
+              >
+            </div>
+          </div>
+        </div>
+        <mat-icon class="material-symbols-outlined active" (click)="removeFromFavorite(forecast)"
+          >star</mat-icon
+        >
+      </li>
+    </ul>
+  </ng-container>
+</app-expansion-panel>
+
+<ng-template #empty>
+  <div class="wrapper">
+    <h2 content>Add favorite city</h2>
+  </div>
+</ng-template>

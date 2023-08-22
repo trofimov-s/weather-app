@@ -1,0 +1,39 @@
+<ul class="flex gap-20">
+  <li *ngFor="let day of dayForecast; let i = index; trackBy: trackBy">
+    <mat-card
+      class="flex justify-center items-center"
+      [class.active]="i === selectedCardIndex"
+      (click)="onSelectDay(day.date, i)"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ day.date | date: 'M/dd' }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="w-150">
+        <div class="flex flex-col x-gap-8 items-center mb-16">
+          <img
+            [src]="'https://openweathermap.org/img/wn/' + day.icon + '@2x.png'"
+            [alt]="day.main"
+          />
+          <span class="text-dark-gray">{{ day.main }}</span>
+        </div>
+        <div class="flex justify-between">
+          <ng-container
+            *ngTemplateOutlet="degrees; context: { val: 'Min', temp: day.temp_min }"
+          ></ng-container>
+          <ng-container
+            *ngTemplateOutlet="degrees; context: { val: 'Max', temp: day.temp_max }"
+          ></ng-container>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </li>
+</ul>
+
+<ng-template #degrees let-temp="temp" let-value="val">
+  <div class="flex flex-col justify-center items-center">
+    <span>{{ value }}</span>
+    <span class="degrees text-dark-gray"
+      >{{ temp }}°<span class="temp-units">{{ unit | unit }}</span></span
+    >
+  </div>
+</ng-template>

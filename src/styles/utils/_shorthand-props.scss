@@ -1,3 +1,5 @@
+@import 'variables';
+
 // Flex
 .flex {
   display: flex;
@@ -5,6 +7,11 @@
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-1 {
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .justify-between {
@@ -24,12 +31,30 @@
   column-gap: 8px;
 }
 
+.gap-20 {
+  gap: 20px;
+}
+
 // Width
 .w-full {
   width: 100%;
 }
 
+.w-150 {
+  width: 150px;
+}
+
 // Height
 .h-24 {
   height: 24px;
+}
+
+// Font
+.text-dark-gray {
+  color: $dark-gray;
+}
+
+// Margin
+.mb-16 {
+  margin-bottom: 16px;
 }
