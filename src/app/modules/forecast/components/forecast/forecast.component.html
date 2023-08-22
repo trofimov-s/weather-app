@@ -1,0 +1,28 @@
+<ng-container *ngIf="(isLoading$ | async) === false; else loading">
+  <ng-container *ngIf="(isError$ | async) === false; else notFound">
+    <ng-container *ngIf="forecast">
+      <ng-container *ngVar="unit$ | async as unit">
+        <app-favorite-forecast [unit]="unit"></app-favorite-forecast>
+        <app-forecast-preview
+          [selectedDayForecasts]="selectedDayForecasts$ | async"
+          [location]="forecast.location"
+          [unit]="unit"
+          [favoriteCities]="favoriteCities$ | async"
+        ></app-forecast-preview>
+        <app-forecast-cards
+          [forecast]="forecast"
+          (selectDay)="onSelectDay($event)"
+          [unit]="unit"
+        ></app-forecast-cards>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner class="wrapper"></mat-spinner>
+</ng-template>
+
+<ng-template #notFound>
+  <h2 class="wrapper">Sorry, city not found. Please enter correct city!</h2>
+</ng-template>

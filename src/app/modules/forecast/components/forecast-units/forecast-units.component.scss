@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  gap: 6px;
+
+  .unit {
+    font-size: 20px;
+    cursor: pointer;
+
+    &.active {
+      color: red;
+    }
+  }
+}

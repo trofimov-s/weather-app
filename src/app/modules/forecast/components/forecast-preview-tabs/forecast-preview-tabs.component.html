@@ -1,0 +1,7 @@
+<ul class="tabs">
+  <ng-container *ngFor="let item of selectedDayForecasts; trackBy: trackBy; let i = index">
+    <li class="tabs-item" [class.active]="selectedDate === item.date" (click)="selectDay.emit(i)">
+      {{ item.date | date: 'h a' }}
+    </li>
+  </ng-container>
+</ul>

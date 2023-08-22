@@ -3,13 +3,24 @@
     "baseUrl": ".",
     "paths": {
       "@shared/input": ["src/app/shared/input/index.ts"],
+      "@shared/data-list": ["src/app/shared/data-list/index.ts"],
+      "@shared/expansion-panel": ["src/app/shared/expansion-panel/index.ts"],
       "@core": ["src/app/core/index.ts"],
       "@core/model/api": ["src/app/core/models/api/index.ts"],
+      "@core/model/forecast": ["src/app/core/models/forecast/index.ts"],
+      "@core/model/shared": ["src/app/core/models/shared/index.ts"],
       "@core/constant/api": ["src/app/core/constant/api/index.ts"],
+      "@core/constant/options": ["src/app/core/constant/options/index.ts"],
+      "@core/constant/units": ["src/app/core/constant/forecast/index.ts"],
       "@core/service": ["src/app/core/service/index.ts"],
+      "@core/utils": ["src/app/core/utils/index.ts"],
+      "@core/directives": ["src/app/core/directives/index.ts"],
       "@core/components": ["src/app/core/components/index.ts"],
+      "@core/enum": ["src/app/core/enum/index.ts"],
+      "@core/pipes": ["src/app/core/pipes/index.ts"],
       "@modules/header": ["src/app/modules/header/index.ts"],
-      "@modules/main": ["src/app/modules/main/index.ts"]
+      "@modules/main": ["src/app/modules/main/index.ts"],
+      "@modules/forecast": ["src/app/modules/forecast/index.ts"]
     }
   }
 }

@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent, SearchComponent } from './components';
 import { InputModule } from '@shared/input';
+import { ForecastModule } from '@modules/forecast';
+import { DirectiveModule } from '@core/directives';
 
 const routes: Routes = [
   {
@@ -14,7 +16,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), InputModule, MatIconModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    InputModule,
+    MatIconModule,
+    ForecastModule,
+    DirectiveModule,
+  ],
   declarations: [MainComponent, SearchComponent],
   exports: [MainComponent],
 })

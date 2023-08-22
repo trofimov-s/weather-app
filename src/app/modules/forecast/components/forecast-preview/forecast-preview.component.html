@@ -1,0 +1,52 @@
+<ng-container *ngIf="selectedTimeForecast$ | async as selectedTimeForecast; else loading">
+  <mat-card class="preview-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>CURRENT WEATHER</mat-card-title>
+        <mat-card-subtitle>{{ location }}</mat-card-subtitle>
+        <div class="flex gap-20 items-center">
+          <mat-icon
+            class="material-symbols-outlined"
+            [class.active]="isCityFavorite"
+            (click)="toggleFavorite()"
+            >star</mat-icon
+          >
+          <app-forecast-units></app-forecast-units>
+        </div>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="preview-wrapper">
+        <div class="left-content">
+          <div class="flex x-gap-8 items-center">
+            <img
+              [src]="'https://openweathermap.org/img/wn/' + selectedTimeForecast?.icon + '@2x.png'"
+              [alt]="selectedTimeForecast?.main"
+            />
+            <p class="degrees">
+              {{ selectedTimeForecast?.temp }}°<span class="temp-units">{{ unit | unit }}</span>
+            </p>
+          </div>
+          <span class="text-dark-gray">{{ selectedTimeForecast?.main }}</span>
+        </div>
+        <app-forecast-details
+          class="flex-1 right-content"
+          [forecast]="selectedTimeForecast"
+          [unit]="unit"
+        ></app-forecast-details>
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <app-forecast-preview-tabs
+        [selectedDayForecasts]="selectedDayForecasts"
+        [selectedDate]="selectedTimeForecast?.date"
+        (selectDay)="onSelectTime($event)"
+      >
+      </app-forecast-preview-tabs>
+    </mat-card-footer>
+  </mat-card>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner class="wrapper"></mat-spinner>
+</ng-template>

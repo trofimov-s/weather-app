@@ -1,10 +1,15 @@
 @import 'angular-material';
 @import 'normalize';
 
+@import 'variables';
 @import 'mixins';
 @import 'shorthand-props';
 
 @import 'container';
+
+body.mat-typography {
+  background-color: $gray;
+}
 
 .divider {
   background-color: lightgray;

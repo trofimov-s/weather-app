@@ -1,4 +1,5 @@
 <main class="flex flex-col justify-center">
   <h2 class="title">Please enter city name</h2>
-  <app-search></app-search>
+  <app-search (submitValue)="updateCity($event)"></app-search>
+  <app-forecast></app-forecast>
 </main>
