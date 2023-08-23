@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 import { ForecastHelperService } from '../../service';
@@ -21,7 +27,10 @@ export class ForecastComponent implements OnInit, OnDestroy {
   public selectedDayForecasts$ = new BehaviorSubject<Array<Weather>>(null);
   public favoriteCities$: Observable<string[]>;
 
-  constructor(private forecastHelper: ForecastHelperService) {}
+  constructor(
+    private forecastHelper: ForecastHelperService,
+    private cd: ChangeDetectorRef,
+  ) {}
 
   public ngOnInit(): void {
     this.isLoading$ = this.forecastHelper.isLoading$;
@@ -35,7 +44,10 @@ export class ForecastComponent implements OnInit, OnDestroy {
         tap(({ keys, list }) => this.selectedDayForecasts$.next(list[keys[0]])),
         this.detacher.takeUntilDetach(),
       )
-      .subscribe((data) => (this.forecast = data));
+      .subscribe((forecast) => {
+        this.forecast = forecast;
+        this.cd.detectChanges();
+      });
   }
 
   public ngOnDestroy(): void {

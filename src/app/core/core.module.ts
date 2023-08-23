@@ -5,14 +5,15 @@ import { HeaderModule } from '@modules/header';
 import { UserLocationService } from './service';
 import { UserLocationData } from './models/api';
 import { firstValueFrom } from 'rxjs';
+import { FooterModule } from '@modules/footer';
 
 function init(locationService: UserLocationService): () => Promise<UserLocationData> {
   return () => firstValueFrom(locationService.trackUserLocation());
 }
 
 @NgModule({
-  imports: [CommonModule, HeaderModule],
-  exports: [HeaderModule],
+  imports: [CommonModule, HeaderModule, FooterModule],
+  exports: [HeaderModule, FooterModule],
   providers: [
     {
       provide: APP_INITIALIZER,

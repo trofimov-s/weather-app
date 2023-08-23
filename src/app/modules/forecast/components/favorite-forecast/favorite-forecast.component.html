@@ -3,7 +3,9 @@
   <ng-container *ngIf="forecasts?.length; else empty" content>
     <ul class="favorite-list">
       <li class="favorite-list__item" *ngFor="let forecast of forecasts; trackBy: trackBy">
-        <h3 class="flex-1">{{ forecast.location }}</h3>
+        <h3 class="flex-1 city-title" (click)="selectCity(forecast.location)">
+          {{ forecast.location }}
+        </h3>
         <div class="details">
           <img
             class="icon"
