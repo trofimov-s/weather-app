@@ -36,12 +36,15 @@ export class ForecastHelperService {
         } else {
           return this.getForecast(city, unit).pipe(
             tap((forecast) => {
-              this.addDataToCache([forecast]);
+              if (forecast) {
+                this.addDataToCache([forecast]);
+              }
               this.isLoading$.next(false);
             }),
           );
         }
       }),
+      filter(Boolean),
     );
   }
 

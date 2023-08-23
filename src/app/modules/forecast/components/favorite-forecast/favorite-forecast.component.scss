@@ -26,6 +26,14 @@
       border-radius: 8px;
       padding: 0 16px;
 
+      .city-title {
+        cursor: pointer;
+
+        &:hover {
+          color: gold;
+        }
+      }
+
       mat-icon {
         cursor: pointer;
 

@@ -1,0 +1,17 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 30px;
+  color: $dark-gray;
+
+  a {
+    color: $dark-gray;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

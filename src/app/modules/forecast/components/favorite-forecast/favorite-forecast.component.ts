@@ -27,6 +27,10 @@ export class FavoriteForecastComponent implements OnInit {
     );
   }
 
+  public selectCity(city: string): void {
+    this.forecastHelper.city = city.split(',')[0];
+  }
+
   public trackBy(_: number, item: DayForecast): string {
     return item.location;
   }

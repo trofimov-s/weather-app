@@ -20,7 +20,8 @@
       "@core/pipes": ["src/app/core/pipes/index.ts"],
       "@modules/header": ["src/app/modules/header/index.ts"],
       "@modules/main": ["src/app/modules/main/index.ts"],
-      "@modules/forecast": ["src/app/modules/forecast/index.ts"]
+      "@modules/forecast": ["src/app/modules/forecast/index.ts"],
+      "@modules/footer": ["src/app/modules/footer/index.ts"]
     }
   }
 }
