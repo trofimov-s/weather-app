@@ -32,6 +32,7 @@ export class ForecastHelperService {
         const cache = this._cache$.getValue();
 
         if (cache && city && city in cache && unit in cache[city]) {
+          this.isError$.next(false);
           return of(cache[city][unit]);
         } else {
           return this.getForecast(city, unit).pipe(
